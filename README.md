@@ -8,4 +8,4 @@ Stoolbox is a collection of shell scripts. In contrast to sharing a massive sing
 - **sound_volume.ps1**: adjust system sound volume using 'j' and 'k' keys.
 - **watch.ps1**: execute commands at regular intervals for monitoring purposes. 
 - **whereis.ps1**: locate positions of specific commands within the system. 
-- **untargz.ps1 untarxz.ps1**: extract .tar.gz(tar.xz) files to a specified output folder.
+- **untargz.ps1 untarxz.ps1 untar.ps1**: extract .tar.gz(tar.xz) .tar files to a specified output folder.
