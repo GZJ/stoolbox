@@ -21,6 +21,9 @@ function gpaste {
 
     $result = @()
 
+    if (-not (Test-Path $DstPath)) {
+        return
+    }
     foreach ($p in $DstPath) {
         foreach ($item in $items) {
             Copy-Item -Recurse $item -Destination $p -Force
