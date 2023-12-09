@@ -9,9 +9,9 @@ Stoolbox is a collection of shell scripts. In contrast to sharing a massive sing
 - **watch.ps1**: execute commands at regular intervals for monitoring purposes. 
 - **whereis.ps1**: locate positions of specific commands within the system. 
 - **untargz.ps1 untarxz.ps1 untar.ps1**: extract .tar.gz(tar.xz) .tar files to a specified output folder.
-- **pa.ps1 pau pam pap**: add specified path to the PATH environment variable.
-- **pd.ps1 pdu pdm pdp**: remove specified directory from PATH.
-- **pb.ps1 pbu pbm pbp**: backup PATH variable to PathBackup.
-- **pv.ps1 pvu pvm pvp pvur pvmr pvpr**: view current state of PATH.
-- **pr.ps1 pru prm prp**: revert changes to PATH.
-- **pe.ps1 peu pem pep peur pemr pepr**: edit PATH variable.
+- **EnvPath/pa.ps1 pau pam pap**: add specified path to the PATH environment variable.
+- **EnvPath/pd.ps1 pdu pdm pdp**: remove specified directory from PATH.
+- **EnvPath/pb.ps1 pbu pbm pbp**: backup PATH variable to PathBackup.
+- **EnvPath/pv.ps1 pvu pvm pvp pvur pvmr pvpr**: view current state of PATH.
+- **EnvPath/pr.ps1 pru prm prp**: revert changes to PATH.
+- **EnvPath/pe.ps1 peu pem pep peur pemr pepr**: edit PATH variable.
