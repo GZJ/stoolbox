@@ -8,41 +8,22 @@ function EnvPath-Refresh-Env {
     refreshenv > $null
 }
 
-function EnvPath-Confirm-Set {
-    [CmdletBinding(
-        SupportsShouldProcess = $true
-    )]
-    param(
-        [string]$profile,
-        [string]$newPath,
-        [string]$describe
-    )
-
-    if ($PSCmdlet.ShouldProcess("Environment Path Variable",$describe)) {
-        [Environment]::SetEnvironmentVariable("Path",$newPath,$profile)
-        if ($?) {
-            Write-Host "Set new path for $profile successful." -ForegroundColor Green
-        } else {
-            Write-Warning "Failed to set a new path for $profile."
-        }
-    } else {
-        Write-Host "No changes made." -ForegroundColor Yellow
-        return $false
-    }
-}
-
 #----------------------------- backup -----------------------------
 function EnvPath-Backup {
     [CmdletBinding(
         SupportsShouldProcess = $true
     )]
     param(
-        [string]$profile
+        [string]$profile,
+        [string]$vname
     )
+
     EnvPath-Refresh-Env $profile
 
     $p = [Environment]::GetEnvironmentVariable("Path",$profile)
-    EnvPath-Confirm-Set $profile $p "Backup $p"
+    [Environment]::SetEnvironmentVariable($vname,$p,$profile)
+
+    EnvPath-Refresh-Env $profile
 }
 
 function pbu {
@@ -50,19 +31,21 @@ function pbu {
         SupportsShouldProcess = $true
     )]
     param()
-    EnvPath-Backup ("User")
+    EnvPath-Backup "User" "PathBackupUser"
 }
+
 function pbm {
     [CmdletBinding(
         SupportsShouldProcess = $true
     )]
     param()
-    EnvPath-Backup ("Machine")
+    EnvPath-Backup "Machine" "PathBackupMachine"
 }
+
 function pbp {
     [CmdletBinding(
         SupportsShouldProcess = $true
     )]
     param()
-    EnvPath-Backup ("Process")
+    EnvPath-Backup "Process" "PathBackupProcess"
 }

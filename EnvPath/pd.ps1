@@ -48,6 +48,7 @@ function EnvPath-Delete {
         [string]$profile,
         [string]$customPath
     )
+
     EnvPath-Refresh-Env $profile
 
     $path = $customPath
@@ -63,6 +64,8 @@ function EnvPath-Delete {
     $newCount = $newCount = ($new -split ";").Count
 
     EnvPath-Confirm-Set $profile $new "Delete $path"
+
+    EnvPath-Refresh-Env $profile
 }
 
 function pdu {

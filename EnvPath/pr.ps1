@@ -37,33 +37,36 @@ function EnvPath-Revert {
         SupportsShouldProcess = $true
     )]
     param(
-        [string]$profile
+        [string]$profile,
+        [string]$vname
     )
+
     EnvPath-Refresh-Env $profile
 
-    $p = [Environment]::GetEnvironmentVariable("PathBackup",$profile)
+    $p = [Environment]::GetEnvironmentVariable($vname,$profile)
     EnvPath-Confirm-Set $profile $p "Revert"
-}
 
+    EnvPath-Refresh-Env $profile
+}
 
 function pru {
     [CmdletBinding(
         SupportsShouldProcess = $true
     )]
     param()
-    EnvPath-Revert ("User")
+    EnvPath-Revert "User" "PathBackupUser"
 }
 function prm {
     [CmdletBinding(
         SupportsShouldProcess = $true
     )]
     param()
-    EnvPath-Revert ("Machine")
+    EnvPath-Revert "Machine" "PathBackupMachine"
 }
 function prp {
     [CmdletBinding(
         SupportsShouldProcess = $true
     )]
     param()
-    EnvPath-Revert ("Process")
+    EnvPath-Revert "Process" "PathBackupProcess"
 }

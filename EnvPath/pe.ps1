@@ -37,6 +37,7 @@ function EnvPath-Edit {
         [string]$profile,
         [switch]$Raw
     )
+
     EnvPath-Refresh-Env $profile
 
     $peTemp = New-TemporaryFile
@@ -55,7 +56,10 @@ function EnvPath-Edit {
         Write-Output $combinedString
         EnvPath-Confirm-Set $profile $combinedString "Overwrite the edited content into path"
     }
+
+    EnvPath-Refresh-Env $profile
 }
+
 
 function peu {
     EnvPath-Edit "User"

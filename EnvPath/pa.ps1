@@ -48,11 +48,14 @@ function EnvPath-Append {
         [string]$profile,
         [string]$customPath = (Get-Location).Path
     )
+
     EnvPath-Refresh-Env $profile
 
     $path = EnvPath-Absolute-Path $customPath
     $p = [Environment]::GetEnvironmentVariable("Path",$profile)
     EnvPath-Confirm-Set $profile "$p;$path" "Append this path $path"
+
+    EnvPath-Refresh-Env $profile
 }
 
 function pau {

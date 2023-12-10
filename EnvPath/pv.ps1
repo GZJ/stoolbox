@@ -15,6 +15,7 @@ function EnvPath-View {
         [string]$profile,
         [switch]$Raw
     )
+
     EnvPath-Refresh-Env $profile
 
     $path = [Environment]::GetEnvironmentVariable("PATH",$profile)

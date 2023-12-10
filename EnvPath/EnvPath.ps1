@@ -45,12 +45,16 @@ function EnvPath-Backup {
         SupportsShouldProcess = $true
     )]
     param(
-        [string]$profile
+        [string]$profile,
+        [string]$vname
     )
+
     EnvPath-Refresh-Env $profile
 
     $p = [Environment]::GetEnvironmentVariable("Path",$profile)
-    EnvPath-Confirm-Set $profile $p "Backup $p"
+    [Environment]::SetEnvironmentVariable($vname,$p,$profile)
+
+    EnvPath-Refresh-Env $profile
 }
 
 function pbu {
@@ -58,21 +62,21 @@ function pbu {
         SupportsShouldProcess = $true
     )]
     param()
-    EnvPath-Backup ("User")
+    EnvPath-Backup "User" "PathBackupUser"
 }
 function pbm {
     [CmdletBinding(
         SupportsShouldProcess = $true
     )]
     param()
-    EnvPath-Backup ("Machine")
+    EnvPath-Backup "Machine" "PathBackupMachine"
 }
 function pbp {
     [CmdletBinding(
         SupportsShouldProcess = $true
     )]
     param()
-    EnvPath-Backup ("Process")
+    EnvPath-Backup "Process" "PathBackupProcess"
 }
 
 #----------------------------- revert -----------------------------
@@ -81,35 +85,38 @@ function EnvPath-Revert {
         SupportsShouldProcess = $true
     )]
     param(
-        [string]$profile
+        [string]$profile,
+        [string]$vname
     )
+
     EnvPath-Refresh-Env $profile
 
-    $p = [Environment]::GetEnvironmentVariable("PathBackup",$profile)
+    $p = [Environment]::GetEnvironmentVariable($vname,$profile)
     EnvPath-Confirm-Set $profile $p "Revert"
-}
 
+    EnvPath-Refresh-Env $profile
+}
 
 function pru {
     [CmdletBinding(
         SupportsShouldProcess = $true
     )]
     param()
-    EnvPath-Revert ("User")
+    EnvPath-Revert "User" "PathBackupUser"
 }
 function prm {
     [CmdletBinding(
         SupportsShouldProcess = $true
     )]
     param()
-    EnvPath-Revert ("Machine")
+    EnvPath-Revert "Machine" "PathBackupMachine"
 }
 function prp {
     [CmdletBinding(
         SupportsShouldProcess = $true
     )]
     param()
-    EnvPath-Revert ("Process")
+    EnvPath-Revert "Process" "PathBackupProcess"
 }
 
 #----------------------------- view -----------------------------
@@ -119,6 +126,7 @@ function EnvPath-View {
         [string]$profile,
         [switch]$Raw
     )
+
     EnvPath-Refresh-Env $profile
 
     $path = [Environment]::GetEnvironmentVariable("PATH",$profile)
@@ -154,6 +162,7 @@ function EnvPath-Edit {
         [string]$profile,
         [switch]$Raw
     )
+
     EnvPath-Refresh-Env $profile
 
     $peTemp = New-TemporaryFile
@@ -173,6 +182,8 @@ function EnvPath-Edit {
         EnvPath-Confirm-Set $profile $combinedString "Overwrite the edited content into path"
 
     }
+
+    EnvPath-Refresh-Env $profile
 }
 
 function peu {
@@ -203,11 +214,14 @@ function EnvPath-Append {
         [string]$profile,
         [string]$customPath = (Get-Location).Path
     )
+
     EnvPath-Refresh-Env $profile
 
     $path = EnvPath-Absolute-Path $customPath
     $p = [Environment]::GetEnvironmentVariable("Path",$profile)
     EnvPath-Confirm-Set $profile "$p;$path" "Append this path $path"
+
+    EnvPath-Refresh-Env $profile
 }
 
 function pau {
@@ -253,6 +267,7 @@ function EnvPath-Delete {
         [string]$profile,
         [string]$customPath
     )
+
     EnvPath-Refresh-Env $profile
 
     $path = $customPath
@@ -268,6 +283,8 @@ function EnvPath-Delete {
     $newCount = $newCount = ($new -split ";").Count
 
     EnvPath-Confirm-Set $profile $new "Delete $path"
+
+    EnvPath-Refresh-Env $profile
 }
 
 function pdu {
