@@ -9,13 +9,16 @@ function lsd {
         $filePaths = (Get-ChildItem $PWD).FullName
     }
 
-    foreach ($filePath in $filePaths) {
+    $result = foreach ($filePath in $filePaths) {
         $file = Get-Item $filePath
 
-        Write-Host "File: $file"
-        Write-Host "Creation Time: $($file.CreationTime)"
-        Write-Host "Modification Time: $($file.LastWriteTime)"
-        Write-Host "Access Time: $($file.LastAccessTime)"
-        Write-Host ""
+        [PSCustomObject]@{
+            File = $file.Name
+            CreationTime = $file.CreationTime
+            LastWriteTime = $file.LastWriteTime
+            LastAccessTime = $file.LastAccessTime
+        }
     }
+
+    $result | Format-Table
 }
