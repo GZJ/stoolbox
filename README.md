@@ -16,3 +16,8 @@ Stoolbox is a collection of shell scripts. In contrast to sharing a massive sing
 - **EnvPath/pv.ps1 pvu pvm pvp pvur pvmr pvpr**: view current state of PATH.
 - **EnvPath/pr.ps1 pru prm prp**: revert changes to PATH.
 - **EnvPath/pe.ps1 peu pem pep peur pemr pepr**: edit PATH variable.
+- **ahk/awc-focus.ahk awc-max awc-min awc-move awc-resize awc-move-resize**: autohotkey window control script.
+- **ahk/keynav.ahk**: keyboard mouse control.
+- **ahk/monitor_get_multi_monitor_id.ahk**: get multi-monitor id.
+- **ahk/mouse_click.ahk mouse_wheel**: mouse click and wheel.
+- **ahk/virtual_desktop.ahk**: virtual desktop selection and deletion. 
