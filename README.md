@@ -1,6 +1,7 @@
 # stoolbox
 Stoolbox is a collection of shell scripts. In contrast to sharing a massive single rc file, I prefer segregating shell configurations into multiple standalone files, making them readily available for others to reference and selectively incorporate preferred features into their own setup.
 
+- **bd64.ps1 be64.ps1**: base64 codec.
 - **fuzzy_pwd_file_select.ps1**: select files in the current working directory using fuzzy matching. 
 - **gcopy.ps1**: copy files to clipboard within the command-line.
 - **gpaste.ps1**: paste files from clipboard in the command-line.
