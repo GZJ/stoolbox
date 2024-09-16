@@ -1,0 +1,6 @@
+[submodule "gui-widgets"]
+	path = gui-widgets
+	url = git@github.com:GZJ/gui-widgets.git
+[submodule "tui-widgets"]
+	path = tui-widgets
+	url = git@github.com:GZJ/tui-widgets.git
