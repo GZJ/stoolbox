@@ -1,3 +1,7 @@
+<#
+.SYNOPSIS
+
+#>
 function StopWatch {
     $stopwatch = [System.Diagnostics.Stopwatch]::new()
     $stopwatch.Start()

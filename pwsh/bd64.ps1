@@ -1,4 +1,7 @@
-Set-Alias bd64 Base64-Decode
+<#
+.SYNOPSIS
+
+#>
 function Base64-Decode {
     param (
         [Parameter(Mandatory = $true)]
@@ -9,3 +12,5 @@ function Base64-Decode {
     $decodedString = [System.Text.Encoding]::UTF8.GetString($bytes)
     return $decodedString
 }
+
+Set-Alias bd64 Base64-Decode

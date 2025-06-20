@@ -1,3 +1,7 @@
+<#
+.SYNOPSIS
+
+#>
 function ll {
     Get-ChildItem | ForEach-Object {
         $size = $_.Length

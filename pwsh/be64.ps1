@@ -1,3 +1,7 @@
+<#
+.SYNOPSIS
+
+#>
 Set-Alias be64 Base64-Encode
 function Base64-Encode {
     param (
