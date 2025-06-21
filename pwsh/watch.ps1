@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-
+execute commands at regular intervals for monitoring purposes
 #>
 function watch {
     param(

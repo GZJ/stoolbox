@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-
+extract .tar files to a specified output folder
 #>
 function untar {
     [CmdletBinding()]

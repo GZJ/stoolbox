@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-
+adjust system sound volume using 'j' and 'k' keys
 #>
 function sound_volume {
     while ($true) {

@@ -1,3 +1,4 @@
+; SYNOPSIS: get multi-monitor id
 ;; get monitors ids.
 SysGet, MonitorCount, MonitorCount
 

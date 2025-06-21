@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-
+a terminal stopwatch
 #>
 function StopWatch {
     $stopwatch = [System.Diagnostics.Stopwatch]::new()

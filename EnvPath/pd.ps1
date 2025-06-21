@@ -1,3 +1,7 @@
+<#
+.SYNOPSIS
+remove specified directory from PATH (pdu pdm pdp)
+#>
 function EnvPath-Refresh-Env {
     param(
         [string]$profile

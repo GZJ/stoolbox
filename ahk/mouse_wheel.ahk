@@ -1,3 +1,4 @@
+; SYNOPSIS: mouse wheel control
 ;; alt+u/i : scroll up/down with the mouse.
 !u::
 Loop 1

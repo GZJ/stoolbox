@@ -1,3 +1,7 @@
+<#
+.SYNOPSIS
+view current state of PATH (pvu pvm pvp pvur pvmr pvpr)
+#>
 function EnvPath-Refresh-Env {
     param(
         [string]$profile

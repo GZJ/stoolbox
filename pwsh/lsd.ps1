@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-
+displays file timestamps (creation, modification, access times) for specified files
 #>
 function lsd {
     [CmdletBinding()]

@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-
+base64 encode tool
 #>
 Set-Alias be64 Base64-Encode
 function Base64-Encode {

@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-
+paste files from clipboard in the command-line
 #>
 function gpaste {
     [CmdletBinding()]

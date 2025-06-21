@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-
+list files with detailed information including size formatting
 #>
 function ll {
     Get-ChildItem | ForEach-Object {

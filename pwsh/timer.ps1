@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-
+timer command execution utility
 #>
 function timer {
     if ($args.count -eq 0) {

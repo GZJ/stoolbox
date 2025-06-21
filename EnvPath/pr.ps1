@@ -1,3 +1,7 @@
+<#
+.SYNOPSIS
+revert changes to PATH (pru prm prp)
+#>
 function EnvPath-Refresh-Env {
     param(
         [string]$profile

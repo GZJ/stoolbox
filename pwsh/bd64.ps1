@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-
+base64 decode tool
 #>
 function Base64-Decode {
     param (

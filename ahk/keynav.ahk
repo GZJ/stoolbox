@@ -1,3 +1,4 @@
+; SYNOPSIS: keyboard mouse control
 jkx1=0
 jky1=80
 hlx1=80

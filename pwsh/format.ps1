@@ -1,3 +1,7 @@
+<#
+.SYNOPSIS
+PowerShell code formatter using PSScriptAnalyzer
+#>
 Install-Module -Name PSScriptAnalyzer
 Import-Module -Name PSScriptAnalyzer
 

@@ -1,3 +1,7 @@
+<#
+.SYNOPSIS
+move untracked git files to 'z' directory for cleanup
+#>
 $untrackedFiles = git ls-files --others --exclude-standard
 
 # 创建目录（如果不存在）

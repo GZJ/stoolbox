@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-
+follow file changes in real-time like tail -f
 #>
 function tailf {
     param(

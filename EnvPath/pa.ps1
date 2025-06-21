@@ -1,3 +1,7 @@
+<#
+.SYNOPSIS
+add specified path to the PATH environment variable (pau pam pap)
+#>
 function EnvPath-Refresh-Env {
     param(
         [string]$profile

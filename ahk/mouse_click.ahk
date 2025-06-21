@@ -1,3 +1,4 @@
+; SYNOPSIS: mouse click control
 ;; alt+j/k : left and right click
 !j::
 click, down

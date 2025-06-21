@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-
+extract .tar.gz files to a specified output folder
 #>
 function untargz {
     [CmdletBinding()]

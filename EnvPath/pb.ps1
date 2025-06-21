@@ -1,3 +1,7 @@
+<#
+.SYNOPSIS
+backup PATH variable to PathBackup (pbu pbm pbp)
+#>
 function EnvPath-Refresh-Env {
     param(
         [string]$profile

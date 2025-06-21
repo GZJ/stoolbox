@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-
+locate positions of specific commands within the system
 #>
 function whereis {
     [CmdletBinding()]

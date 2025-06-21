@@ -1,6 +1,6 @@
 ﻿<#
 .SYNOPSIS
-
+copy files to clipboard within the command-line
 #>
 
 function gcopy {

@@ -1,3 +1,7 @@
+<#
+.SYNOPSIS
+edit PATH variable (peu pem pep peur pemr pepr)
+#>
 function EnvPath-Refresh-Env {
     param(
         [string]$profile

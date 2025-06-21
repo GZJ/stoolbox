@@ -1,3 +1,4 @@
+; SYNOPSIS: virtual desktop selection and deletion
 ;; shift+win+j/k : move left/right on virtual desktops.
 ^#j::
 Send ^#{Right}

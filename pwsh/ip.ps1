@@ -1,6 +1,6 @@
 ﻿<#
 .SYNOPSIS
-
+IP address utility tool for getting local and external IP information
 #>
 function ip {
     [CmdletBinding()]

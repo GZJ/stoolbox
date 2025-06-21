@@ -1,3 +1,7 @@
+<#
+.SYNOPSIS
+remove files and folders to recycle bin safely
+#>
 function rm {
     param (
         [Parameter(ValueFromRemainingArguments = $true)]
